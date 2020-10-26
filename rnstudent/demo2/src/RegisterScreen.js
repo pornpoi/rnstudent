@@ -9,6 +9,9 @@ import {
 } from 'react-native';
 
 export default function RegisterScreen() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <ImageBackground
       style={{flex: 1}}
