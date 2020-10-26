@@ -36,7 +36,15 @@ export default function RegisterScreen() {
             }}
           />
 
-          <TextInput placeholder="Username" />
+          <TextInput
+            style={{
+              flex: 1,
+              borderWidth: 1,
+              borderColor: '#000',
+              borderRadius: 5,
+            }}
+            placeholder="Username"
+          />
         </View>
       </View>
     </ImageBackground>
