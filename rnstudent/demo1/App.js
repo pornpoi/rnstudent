@@ -14,6 +14,8 @@ export default function App() {
       }}>
       <Text
         style={{
+          textAlignVertical: 'center',
+          height: 100,
           color: 'black',
           backgroundColor: 'yellow',
           textAlign: 'center',
