@@ -8,6 +8,64 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+cmEntry = () => {
+  return (
+    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      {/* Icon */}
+      <View
+        style={{
+          height: 40,
+          width: 40,
+          backgroundColor: 'red',
+          borderRadius: 20,
+        }}
+      />
+
+      <TextInput
+        onChangeText={(text) => setUsername(text)}
+        style={{
+          marginLeft: 8,
+          flex: 1,
+          paddingLeft: 16,
+          borderWidth: 1,
+          borderColor: '#0007',
+          borderRadius: 5,
+        }}
+        placeholder="Username"
+      />
+    </View>
+  );
+};
+
+CMEntry = () => {
+  return (
+    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      {/* Icon */}
+      <View
+        style={{
+          height: 40,
+          width: 40,
+          backgroundColor: 'red',
+          borderRadius: 20,
+        }}
+      />
+
+      <TextInput
+        onChangeText={(text) => setUsername(text)}
+        style={{
+          marginLeft: 8,
+          flex: 1,
+          paddingLeft: 16,
+          borderWidth: 1,
+          borderColor: '#0007',
+          borderRadius: 5,
+        }}
+        placeholder="Username"
+      />
+    </View>
+  );
+};
+
 export default function HomeScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -34,30 +92,6 @@ export default function HomeScreen() {
           borderRadius: 10,
         }}>
         {/* Username */}
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          {/* Icon */}
-          <View
-            style={{
-              height: 40,
-              width: 40,
-              backgroundColor: 'red',
-              borderRadius: 20,
-            }}
-          />
-
-          <TextInput
-            onChangeText={(text) => setUsername(text)}
-            style={{
-              marginLeft: 8,
-              flex: 1,
-              paddingLeft: 16,
-              borderWidth: 1,
-              borderColor: '#0007',
-              borderRadius: 5,
-            }}
-            placeholder="Username"
-          />
-        </View>
 
         <View style={{height: 8}} />
 
