@@ -37,7 +37,7 @@ cmEntry = () => {
   );
 };
 
-CMEntry = () => {
+CMEntry = (props) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
@@ -59,7 +59,7 @@ CMEntry = () => {
           borderColor: '#0007',
           borderRadius: 5,
         }}
-        placeholder="Username"
+        placeholder={props.hint}
       />
     </View>
   );
@@ -91,11 +91,11 @@ export default function HomeScreen() {
           borderRadius: 10,
         }}>
         {/* Username */}
-        <CMEntry />
+        <CMEntry hint="Username" />
         <View style={{height: 8}} />
 
         {/* Password */}
-        <CMEntry />
+        <CMEntry hint="Password" />
 
         {/* Confirm button */}
         <TouchableOpacity
