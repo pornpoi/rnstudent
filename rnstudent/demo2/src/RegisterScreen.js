@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, ImageBackground, Image, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TextInput,
+  Button,
+} from 'react-native';
 
 export default function RegisterScreen() {
   return (
@@ -49,7 +56,7 @@ export default function RegisterScreen() {
         </View>
 
         <View style={{height: 8}} />
-        
+
         {/* Password */}
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           {/* Icon */}
@@ -74,6 +81,8 @@ export default function RegisterScreen() {
             placeholder="Password"
           />
         </View>
+
+        <Button title="Confirm" style={{marginTop: 50}} />
       </View>
     </ImageBackground>
   );
