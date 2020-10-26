@@ -14,7 +14,15 @@ export default function RegisterScreen() {
       />
 
       {/* Authen section */}
-      <View style={{height: 100, backgroundColor: 'white'}}></View>
+      <View
+        style={{
+          height: 100,
+          backgroundColor: '#FFF3',
+          marginLeft: 30,
+          marginRight: 30,
+          marginTop: 30,
+          borderRadius: 10,
+        }}></View>
     </ImageBackground>
   );
 }
