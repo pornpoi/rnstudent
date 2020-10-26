@@ -10,9 +10,16 @@ export default function App() {
         backgroundColor: 'red',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
       }}>
-      <Text style={{color: 'black', backgroundColor: 'yellow'}}>Hey</Text>
+      <Text
+        style={{
+          color: 'black',
+          backgroundColor: 'yellow',
+          textAlign: 'center',
+        }}>
+        Hey 1234
+      </Text>
     </View>
   );
 }
