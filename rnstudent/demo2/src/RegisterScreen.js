@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground, Image} from 'react-native';
+import {View, Text, ImageBackground, Image, TextInput} from 'react-native';
 
 export default function RegisterScreen() {
   return (
@@ -21,12 +21,22 @@ export default function RegisterScreen() {
           marginLeft: 30,
           marginRight: 30,
           marginTop: 30,
+          padding: 16,
           borderRadius: 10,
         }}>
         {/* Username */}
         <View style={{flexDirection: 'row'}}>
           {/* Icon */}
-          <View style={{height: 40, width: 40, backgroundColor: 'red'}} />
+          <View
+            style={{
+              height: 40,
+              width: 40,
+              backgroundColor: 'red',
+              borderRadius: 20,
+            }}
+          />
+
+          <TextInput placeholder="Username" />
         </View>
       </View>
     </ImageBackground>
