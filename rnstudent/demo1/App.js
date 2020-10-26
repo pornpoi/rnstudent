@@ -12,6 +12,7 @@ export default function App() {
         justifyContent: 'center',
         alignItems: 'stretch',
       }}>
+      {/* Box1 */}
       <Text
         style={{
           textAlignVertical: 'center',
@@ -19,7 +20,29 @@ export default function App() {
           backgroundColor: 'yellow',
           textAlign: 'center',
         }}>
-        Hey 1234
+        Hey 1
+      </Text>
+
+      {/* Box2 */}
+      <Text
+        style={{
+          textAlignVertical: 'center',
+          color: 'black',
+          backgroundColor: 'green',
+          textAlign: 'center',
+        }}>
+        Hey 2
+      </Text>
+
+      {/* Box3 */}
+      <Text
+        style={{
+          textAlignVertical: 'center',
+          color: 'black',
+          backgroundColor: '#3377ee30',
+          textAlign: 'center',
+        }}>
+        Hey 3
       </Text>
     </View>
   );
