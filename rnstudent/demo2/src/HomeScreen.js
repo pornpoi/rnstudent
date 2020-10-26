@@ -51,7 +51,6 @@ CMEntry = () => {
       />
 
       <TextInput
-        onChangeText={(text) => setUsername(text)}
         style={{
           marginLeft: 8,
           flex: 1,
@@ -92,34 +91,11 @@ export default function HomeScreen() {
           borderRadius: 10,
         }}>
         {/* Username */}
-
+        <CMEntry />
         <View style={{height: 8}} />
 
         {/* Password */}
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          {/* Icon */}
-          <View
-            style={{
-              height: 40,
-              width: 40,
-              backgroundColor: 'yellow',
-              borderRadius: 20,
-            }}
-          />
-
-          <TextInput
-            onChangeText={(text) => setPassword(text)}
-            style={{
-              marginLeft: 8,
-              flex: 1,
-              paddingLeft: 16,
-              borderWidth: 1,
-              borderColor: '#0007',
-              borderRadius: 5,
-            }}
-            placeholder="Password"
-          />
-        </View>
+        <CMEntry />
 
         {/* Confirm button */}
         <TouchableOpacity
