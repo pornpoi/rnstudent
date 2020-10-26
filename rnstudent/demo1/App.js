@@ -7,9 +7,9 @@ export default function App() {
       // jsx
       style={{
         flex: 1,
-        backgroundColor: 'red',
+        backgroundColor: 'white',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'stretch',
       }}>
       {/* Box1 */}
