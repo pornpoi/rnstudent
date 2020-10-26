@@ -82,6 +82,7 @@ export default function RegisterScreen() {
           />
         </View>
 
+        {/* Confirm button */}
         <TouchableOpacity
           style={{
             backgroundColor: '#0F0',
@@ -94,6 +95,20 @@ export default function RegisterScreen() {
             alignItems: 'center',
           }}>
           <Text style={{fontWeight: 'bold'}}>CONFIRM</Text>
+        </TouchableOpacity>
+
+        {/* Cancel button */}
+        <TouchableOpacity
+          style={{
+            height: 50,
+            borderRadius: 10,
+            borderColor: '#0003',
+            marginTop: 10,
+            borderWidth: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontWeight: 'bold'}}>CANCEL</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
