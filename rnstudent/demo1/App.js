@@ -6,13 +6,13 @@ export default function App() {
     <View
       // jsx
       style={{
-        flex: 0.5,
+        flex: 1,
         backgroundColor: 'red',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>Hey</Text>
+      <Text style={{color: 'black', backgroundColor: 'yellow'}}>Hey</Text>
     </View>
   );
 }
