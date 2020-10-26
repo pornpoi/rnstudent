@@ -25,7 +25,7 @@ export default function RegisterScreen() {
           borderRadius: 10,
         }}>
         {/* Username */}
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
           {/* Icon */}
           <View
             style={{
@@ -38,7 +38,7 @@ export default function RegisterScreen() {
 
           <TextInput
             style={{
-              marginLeft: 16,
+              marginLeft: 8,
               flex: 1,
               paddingLeft: 16,
               borderWidth: 1,
@@ -46,6 +46,31 @@ export default function RegisterScreen() {
               borderRadius: 5,
             }}
             placeholder="Username"
+          />
+        </View>
+
+        {/* Password */}
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          {/* Icon */}
+          <View
+            style={{
+              height: 40,
+              width: 40,
+              backgroundColor: 'yellow',
+              borderRadius: 20,
+            }}
+          />
+
+          <TextInput
+            style={{
+              marginLeft: 8,
+              flex: 1,
+              paddingLeft: 16,
+              borderWidth: 1,
+              borderColor: '#0007',
+              borderRadius: 5,
+            }}
+            placeholder="Password"
           />
         </View>
       </View>
