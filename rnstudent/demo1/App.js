@@ -15,6 +15,7 @@ export default function App() {
       {/* Box1 */}
       <Text
         style={{
+          flex: 1,
           textAlignVertical: 'center',
           color: 'black',
           backgroundColor: 'yellow',
@@ -26,6 +27,7 @@ export default function App() {
       {/* Box2 */}
       <Text
         style={{
+          flex: 0.5,
           textAlignVertical: 'center',
           color: 'black',
           backgroundColor: 'green',
@@ -37,6 +39,7 @@ export default function App() {
       {/* Box3 */}
       <Text
         style={{
+          flex: 1,
           textAlignVertical: 'center',
           color: 'black',
           backgroundColor: '#3377ee30',
