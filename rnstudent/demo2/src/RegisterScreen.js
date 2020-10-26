@@ -5,7 +5,7 @@ import {
   ImageBackground,
   Image,
   TextInput,
-  Button,
+  TouchableOpacity,
 } from 'react-native';
 
 export default function RegisterScreen() {
@@ -82,7 +82,15 @@ export default function RegisterScreen() {
           />
         </View>
 
-        <Button title="Confirm" style={{marginTop: 50}} />
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#0F0',
+            height: 50,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text>Confirm</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
