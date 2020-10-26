@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -46,6 +46,7 @@ export default function RegisterScreen() {
           />
 
           <TextInput
+            onChangeText={(text) => setUsername(text)}
             style={{
               marginLeft: 8,
               flex: 1,
@@ -73,6 +74,7 @@ export default function RegisterScreen() {
           />
 
           <TextInput
+            onChangeText={(text) => setPassword(text)}
             style={{
               marginLeft: 8,
               flex: 1,
@@ -88,7 +90,7 @@ export default function RegisterScreen() {
         {/* Confirm button */}
         <TouchableOpacity
           onPress={() => {
-            alert('Hey');
+            alert(`username : ${username}, password : ${password}`);
           }}
           style={{
             backgroundColor: '#0F0',
