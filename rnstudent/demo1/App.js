@@ -8,14 +8,12 @@ export default function App() {
       style={{
         flex: 1,
         backgroundColor: 'white',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'space-evenly',
-        alignItems: 'stretch',
       }}>
       {/* Box1 */}
       <Text
         style={{
-          height: 100,
           textAlignVertical: 'center',
           color: 'black',
           backgroundColor: 'yellow',
@@ -27,7 +25,6 @@ export default function App() {
       {/* Box2 */}
       <Text
         style={{
-          height: 100,
           textAlignVertical: 'center',
           color: 'black',
           backgroundColor: 'green',
@@ -39,7 +36,6 @@ export default function App() {
       {/* Box3 */}
       <Text
         style={{
-          height: 100,
           textAlignVertical: 'center',
           color: 'black',
           backgroundColor: '#3377ee30',
