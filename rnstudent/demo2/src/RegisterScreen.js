@@ -22,7 +22,13 @@ export default function RegisterScreen() {
           marginRight: 30,
           marginTop: 30,
           borderRadius: 10,
-        }}></View>
+        }}>
+        {/* Username */}
+        <View style={{flexDirection: 'row'}}>
+          {/* Icon */}
+          <View style={{height: 40, width: 40, backgroundColor: 'red'}} />
+        </View>
+      </View>
     </ImageBackground>
   );
 }
