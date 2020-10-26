@@ -1,0 +1,2 @@
+- npx react-native init demox
+- npx react-native run-android
