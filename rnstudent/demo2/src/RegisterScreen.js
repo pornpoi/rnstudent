@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ImageBackground} from 'react-native';
 
 export default function RegisterScreen() {
   return (
-    <View style={{flex: 1, backgroundColor: 'red'}}>
+    <ImageBackground
+      style={{flex: 1}}
+      source={require('./assets/img/gradient_bg.png')}>
       <Text>RegisterScreen</Text>
-    </View>
+    </ImageBackground>
   );
 }
