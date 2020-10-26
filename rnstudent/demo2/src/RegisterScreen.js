@@ -86,10 +86,14 @@ export default function RegisterScreen() {
           style={{
             backgroundColor: '#0F0',
             height: 50,
+            borderRadius: 10,
+            borderColor: '#0007',
+            marginTop: 20,
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text>Confirm</Text>
+          <Text style={{fontWeight: 'bold'}}>CONFIRM</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
