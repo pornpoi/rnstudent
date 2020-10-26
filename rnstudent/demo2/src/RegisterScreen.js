@@ -84,6 +84,9 @@ export default function RegisterScreen() {
 
         {/* Confirm button */}
         <TouchableOpacity
+          onPress={() => {
+            alert('Hey');
+          }}
           style={{
             backgroundColor: '#0F0',
             height: 50,
