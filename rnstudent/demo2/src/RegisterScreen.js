@@ -16,7 +16,6 @@ export default function RegisterScreen() {
       {/* Authen section */}
       <View
         style={{
-          height: 100,
           backgroundColor: '#FFF3',
           marginLeft: 30,
           marginRight: 30,
@@ -49,6 +48,8 @@ export default function RegisterScreen() {
           />
         </View>
 
+        <View style={{height: 8}} />
+        
         {/* Password */}
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           {/* Icon */}
