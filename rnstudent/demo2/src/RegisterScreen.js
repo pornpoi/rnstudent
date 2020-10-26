@@ -38,9 +38,11 @@ export default function RegisterScreen() {
 
           <TextInput
             style={{
+              marginLeft: 16,
               flex: 1,
+              paddingLeft: 16,
               borderWidth: 1,
-              borderColor: '#000',
+              borderColor: '#0007',
               borderRadius: 5,
             }}
             placeholder="Username"
