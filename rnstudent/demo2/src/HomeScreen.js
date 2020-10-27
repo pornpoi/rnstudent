@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-community/async-storage';
 import React, {useState} from 'react';
 import {
   View,
@@ -68,6 +69,17 @@ export default function HomeScreen(props) {
         </TouchableOpacity>
       ),
     });
+  };
+
+  onClickLogin = async () => {
+    const regUsername = await AsyncStorage.getItem('kUsername');
+    const regPassword = await AsyncStorage.getItem('kPassword');
+
+    if (username == regUsername && password == regPassword) {
+      alert('Success');
+    } else {
+      alert('Failed : ' + `${regUsername}, ${regPassword}`);
+    }
   };
 
   return (
