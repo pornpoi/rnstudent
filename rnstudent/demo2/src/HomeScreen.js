@@ -14,10 +14,7 @@ CMEntry = ({hint, isPassword, keyboardMode, onChange, icon}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
-      <Icon
-        name={icon}
-        size={35}
-      />
+      <Icon name={icon} size={35} />
 
       <TextInput
         style={{
@@ -64,6 +61,7 @@ export default function HomeScreen() {
         }}>
         {/* Username */}
         <CMEntry
+          icon="user"
           hint="Username"
           keyboardMode="email-address"
           onChange={(text) => setUsername(text)}
@@ -72,6 +70,7 @@ export default function HomeScreen() {
 
         {/* Password */}
         <CMEntry
+          icon="lock"
           hint="Password"
           isPassword
           onChange={(text) => setPassword(text)}
