@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-CMEntry = ({hint, isPassword, keyboardMode}) => {
+CMEntry = ({hint, isPassword, keyboardMode, onChange}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
@@ -30,6 +30,7 @@ CMEntry = ({hint, isPassword, keyboardMode}) => {
           borderColor: '#0007',
           borderRadius: 5,
         }}
+        onChangeText={onChange}
         keyboardType={keyboardMode}
         secureTextEntry={isPassword}
         placeholder={hint}
@@ -64,11 +65,23 @@ export default function HomeScreen() {
           borderRadius: 10,
         }}>
         {/* Username */}
-        <CMEntry hint="Username" keyboardMode="email-address" />
+        <CMEntry
+          hint="Username"
+          keyboardMode="email-address"
+          onChange={(text) => {
+            console.log(text);
+          }}
+        />
         <View style={{height: 8}} />
 
         {/* Password */}
-        <CMEntry hint="Password" isPassword={true} />
+        <CMEntry
+          hint="Password"
+          isPassword
+          onChange={(text) => {
+            console.log(text);
+          }}
+        />
 
         {/* Confirm button */}
         <TouchableOpacity
