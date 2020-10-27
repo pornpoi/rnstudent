@@ -12,6 +12,18 @@ export default function RegisterScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  setNavigationOption = () => {
+    props.navigation.setOptions({
+      title: 'Register',
+      headerStyle: {
+        backgroundColor: '#999CED',
+      },
+      headerTintColor: '#FFFFFF',
+      headerTitleStyle: {color: '#fff'},
+      headerBackTitle: ' ',
+    });
+  };
+
   return (
     <ImageBackground
       style={{flex: 1}}
