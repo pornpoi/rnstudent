@@ -34,7 +34,7 @@ CMEntry = ({hint, isPassword, keyboardMode, onChange, icon}) => {
   );
 };
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -94,8 +94,9 @@ export default function HomeScreen() {
           <Text style={{fontWeight: 'bold'}}>LOGIN</Text>
         </TouchableOpacity>
 
-        {/* Cancel button */}
+        {/* Register button */}
         <TouchableOpacity
+          onPress={() => props.navigation.navigate('Register')}
           style={{
             height: 50,
             borderRadius: 10,
@@ -105,7 +106,7 @@ export default function HomeScreen() {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{fontWeight: 'bold'}}>CANCEL</Text>
+          <Text style={{fontWeight: 'bold'}}>REGISTER</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
