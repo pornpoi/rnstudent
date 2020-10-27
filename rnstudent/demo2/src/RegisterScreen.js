@@ -12,6 +12,10 @@ export default function RegisterScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  React.useEffect(() => {
+    setNavigationOption();
+  }, []);
+
   setNavigationOption = () => {
     props.navigation.setOptions({
       title: 'Register',
