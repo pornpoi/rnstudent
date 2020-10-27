@@ -31,4 +31,17 @@ const RootStack = (props) => {
   );
 };
 
+const Tab = createBottomTabNavigator();
+
+const SuccessTab = () => {
+  return (
+    <Tab.Navigator initialRouteName="JSON">
+      <>
+        <Tab.Screen name="JSON" component={JSONStackScreen} />
+        <Tab.Screen name="Camera" component={CameraScreen} />
+      </>
+    </Tab.Navigator>
+  );
+};
+
 export default RootStack;
