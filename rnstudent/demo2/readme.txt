@@ -26,3 +26,5 @@ npx react-native link react-native-safe-area-context
 npx react-native link @react-native-community/masked-view      
 npx react-native link @react-native-community/async-storage    
 npx react-native link react-native-permissions
+
+yarn add axios
