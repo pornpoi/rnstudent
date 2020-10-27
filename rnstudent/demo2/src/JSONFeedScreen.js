@@ -12,12 +12,8 @@ import {
 import axios from 'axios';
 
 export default function JSONFeedScreen() {
-
-  const [dataArray, setDataArray] = useState([])
+  const [dataArray, setDataArray] = useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
-
-
-
 
   React.useEffect(() => {
     loadDataWithPost();
@@ -32,6 +28,7 @@ export default function JSONFeedScreen() {
     const url = 'http://codemobiles.com/adhoc/youtubes/index_new.php';
     let result = await axios.post(url, data);
     console.log(JSON.stringify(result.data));
+    setDataArray(result.data.youtubes);
   };
 
   renderRow = ({item, index}) => (
@@ -46,8 +43,8 @@ export default function JSONFeedScreen() {
 
         {/* Title and Subtitle */}
         <View style={styles.listTitleSubtitleContainer}>
-          <Text style={styles.listTitle}>Title</Text>
-          <Text style={styles.listSubTitle}>SubTitle</Text>
+          <Text style={styles.listTitle}>{item.title}</Text>
+          <Text style={styles.listSubTitle}>{item.subtitle}</Text>
         </View>
       </View>
 
@@ -64,9 +61,9 @@ export default function JSONFeedScreen() {
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
-        data={['Angular', 'VueJS', 'Golang', 'UXUI']}
+        data={dataArray ? dataArray : []}
         renderItem={renderRow}
-        keyExtractor={(item) => Math.random().toString()}
+        keyExtractor={(item) => item.id}
       />
     </ImageBackground>
   );
