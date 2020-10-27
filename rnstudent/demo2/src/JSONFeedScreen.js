@@ -26,6 +26,12 @@ export default function JSONFeedScreen() {
           <Text style={styles.listSubTitle}>SubTitle</Text>
         </View>
       </View>
+
+      {/* Youtube Image */}
+      <Image
+        style={styles.listYoutbeImage}
+        source={require('./assets/img/loadingimg.png')}
+      />
     </TouchableOpacity>
   );
 
