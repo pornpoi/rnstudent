@@ -80,6 +80,7 @@ export default function HomeScreen(props) {
     } else {
       alert('Failed : ' + `${regUsername}, ${regPassword}`);
     }
+    props.navigation.navigate('Success');
   };
 
   return (
