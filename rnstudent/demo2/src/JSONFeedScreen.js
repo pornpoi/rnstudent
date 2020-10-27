@@ -61,13 +61,24 @@ export default function JSONFeedScreen() {
     />
   );
 
+
+  const refresh = () => {
+    setIsRefreshing(true);
+    setDataArray([]);
+
+    setTimeout(async () => {
+      await loadDataWithPost();
+      setIsRefreshing(false);
+    }, 1000);
+  };
+  
   return (
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
-        refreshing={true}
-        onRefresh={() => {}}
+        refreshing={isRefreshing}
+        onRefresh={refresh}
         ListHeaderComponent={renderHeader}
         data={dataArray ? dataArray : []}
         renderItem={renderRow}
