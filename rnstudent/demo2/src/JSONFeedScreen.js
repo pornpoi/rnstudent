@@ -66,6 +66,8 @@ export default function JSONFeedScreen() {
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
+        refreshing={true}
+        onRefresh={() => {}}
         ListHeaderComponent={renderHeader}
         data={dataArray ? dataArray : []}
         renderItem={renderRow}
