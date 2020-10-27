@@ -38,6 +38,41 @@ export default function HomeScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  React.useEffect(() => {
+    console.log('Hey Hey Hey Hey Hey Hey Hey ');
+  }, []);
+
+
+
+  setNavigationOption = () => {
+    props.navigation.setOptions({
+      title: 'Home',
+      headerStyle: {
+        backgroundColor: '#999CED',
+      },
+      headerTintColor: '#FFFFFF',
+      headerTitleStyle: {color: '#fff'},
+      headerBackTitle: ' ',
+      headerRight: () => (
+        <TouchableOpacity
+          activeOpacity={0.1}
+          onPress={() => alert('www.codemobiles.com')}
+          style={{padding: 10}}>
+          <Icon
+            name="address-card"
+            size={20}
+            color="#fff"
+            style={{
+              height: 24,
+              width: 24,
+            }}
+          />
+        </TouchableOpacity>
+      ),
+    });
+  };
+
+
   return (
     <ImageBackground
       style={{flex: 1}}
