@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 CMEntry = ({hint, isPassword, keyboardMode, onChange}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
