@@ -14,7 +14,15 @@ export default function JSONFeedScreen() {
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
-      <Text>JSONScreen</Text>
+      <FlatList
+        data={['Angular', 'VueJS', 'Golang', 'UXUI']}
+        renderItem={({item, index}) => (
+          <Text>
+            {index + 1}. {item}
+          </Text>
+        )}
+        keyExtractor={(item) => Math.random().toString()}
+      />
     </ImageBackground>
   );
 }
