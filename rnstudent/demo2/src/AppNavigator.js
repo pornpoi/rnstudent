@@ -39,7 +39,7 @@ const SuccessTab = () => {
   return (
     <Tab.Navigator initialRouteName="JSON">
       <>
-        <Tab.Screen name="JSON" component={JSONStackScreen} />
+        <Tab.Screen name="JSON" component={JSONFeedScreen} />
         <Tab.Screen name="Camera" component={CameraScreen} />
       </>
     </Tab.Navigator>

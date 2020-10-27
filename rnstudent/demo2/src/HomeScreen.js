@@ -111,7 +111,8 @@ export default function HomeScreen(props) {
         {/* Confirm button */}
         <TouchableOpacity
           onPress={() => {
-            alert(`username : ${username}, password : ${password}`);
+            // alert(`username : ${username}, password : ${password}`);
+            props.navigation.navigate('Success');
           }}
           style={{
             backgroundColor: '#0F0',
