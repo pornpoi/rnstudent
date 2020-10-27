@@ -10,17 +10,19 @@ import {
 } from 'react-native';
 
 export default function JSONFeedScreen() {
+  renderRow = ({item, index}) => (
+    <Text>
+      {index + 1}. {item}
+    </Text>
+  );
+
   return (
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
         data={['Angular', 'VueJS', 'Golang', 'UXUI']}
-        renderItem={({item, index}) => (
-          <Text>
-            {index + 1}. {item}
-          </Text>
-        )}
+        renderItem={renderRow}
         keyExtractor={(item) => Math.random().toString()}
       />
     </ImageBackground>
