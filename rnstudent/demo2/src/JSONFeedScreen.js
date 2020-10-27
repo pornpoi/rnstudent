@@ -19,6 +19,12 @@ export default function JSONFeedScreen() {
           style={styles.listAvatar}
           source={require('./assets/img/avatar.png')}
         />
+
+        {/* Title and Subtitle */}
+        <View style={styles.listTitleSubtitleContainer}>
+          <Text style={styles.listTitle}>Title</Text>
+          <Text style={styles.listSubTitle}>SubTitle</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
