@@ -14,13 +14,9 @@ CMEntry = ({hint, isPassword, keyboardMode, onChange}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
-      <View
-        style={{
-          height: 40,
-          width: 40,
-          backgroundColor: 'red',
-          borderRadius: 20,
-        }}
+      <Icon
+        name="user"
+        size={35}
       />
 
       <TextInput
