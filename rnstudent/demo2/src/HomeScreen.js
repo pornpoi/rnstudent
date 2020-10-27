@@ -10,12 +10,12 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-CMEntry = ({hint, isPassword, keyboardMode, onChange}) => {
+CMEntry = ({hint, isPassword, keyboardMode, onChange, icon}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
       <Icon
-        name="user"
+        name={icon}
         size={35}
       />
 
