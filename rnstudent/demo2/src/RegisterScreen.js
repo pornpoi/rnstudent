@@ -10,7 +10,6 @@ import {
 
 import AsyncStorage from '@react-native-community/async-storage';
 
-
 export default function RegisterScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -29,6 +28,12 @@ export default function RegisterScreen(props) {
       headerTitleStyle: {color: '#fff'},
       headerBackTitle: ' ',
     });
+  };
+
+  onClickRegister = async () => {
+    await AsyncStorage.setItem('kUsername', username);
+    await AsyncStorage.setItem('kPassword', password);
+    props.navigation.goBack();
   };
 
   return (
@@ -108,9 +113,7 @@ export default function RegisterScreen(props) {
 
         {/* Confirm button */}
         <TouchableOpacity
-          onPress={() => {
-            alert(`username : ${username}, password : ${password}`);
-          }}
+          onPress={onClickRegister}
           style={{
             backgroundColor: '#0F0',
             height: 50,
