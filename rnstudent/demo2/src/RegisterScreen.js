@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function RegisterScreen() {
+export default function RegisterScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -107,6 +107,7 @@ export default function RegisterScreen() {
 
         {/* Cancel button */}
         <TouchableOpacity
+          onPress={() => props.navigation.goBack()}
           style={{
             height: 50,
             borderRadius: 10,
