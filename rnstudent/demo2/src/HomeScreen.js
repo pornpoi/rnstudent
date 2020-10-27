@@ -39,10 +39,8 @@ export default function HomeScreen(props) {
   const [password, setPassword] = useState('');
 
   React.useEffect(() => {
-    console.log('Hey Hey Hey Hey Hey Hey Hey ');
+    setNavigationOption();
   }, []);
-
-
 
   setNavigationOption = () => {
     props.navigation.setOptions({
@@ -71,7 +69,6 @@ export default function HomeScreen(props) {
       ),
     });
   };
-
 
   return (
     <ImageBackground
