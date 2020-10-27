@@ -53,11 +53,20 @@ export default function JSONFeedScreen() {
     </TouchableOpacity>
   );
 
+  const renderHeader = () => (
+    <Image
+      source={require('./assets/img/header_react_native.png')}
+      resizeMode="contain"
+      style={{height: 100, width: '100%'}}
+    />
+  );
+
   return (
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
+        ListHeaderComponent={renderHeader}
         data={dataArray ? dataArray : []}
         renderItem={renderRow}
         keyExtractor={(item) => item.id}
