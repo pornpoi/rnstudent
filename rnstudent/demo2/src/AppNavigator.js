@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -34,13 +34,47 @@ const RootStack = (props) => {
 };
 
 const Tab = createBottomTabNavigator();
+const tab1 = {
+  tabBarLabel: 'JSON',
+  tabBarIcon: ({focused}) => (
+    <Image
+      style={{
+        height: 28,
+        width: 28,
+      }}
+      resizeMode="contain"
+      source={
+        focused
+          ? require('./assets/img/ic_profile_select.png')
+          : require('./assets/img/ic_profile.png')
+      }
+    />
+  ),
+};
 
+const tab2 = {
+  tabBarLabel: 'Camera',
+  tabBarIcon: ({focused}) => (
+    <Image
+      style={{
+        height: 28,
+        width: 28,
+      }}
+      resizeMode="contain"
+      source={
+        focused
+          ? require('./assets/img/ic_card_select.png')
+          : require('./assets/img/ic_card.png')
+      }
+    />
+  ),
+};
 const SuccessTab = () => {
   return (
     <Tab.Navigator initialRouteName="JSON">
       <>
-        <Tab.Screen name="JSON" component={JSONFeedScreen} />
-        <Tab.Screen name="Camera" component={CameraScreen} />
+        <Tab.Screen name="JSON" component={JSONFeedScreen} options={tab1} />
+        <Tab.Screen name="Camera" component={CameraScreen} options={tab2} />
       </>
     </Tab.Navigator>
   );
