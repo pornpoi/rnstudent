@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-CMEntry = ({hint}) => {
+CMEntry = ({hint, isPassword, keyboardMode}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
@@ -64,11 +64,11 @@ export default function HomeScreen() {
           borderRadius: 10,
         }}>
         {/* Username */}
-        <CMEntry hint="Username" />
+        <CMEntry hint="Username" keyboardMode="email-address" />
         <View style={{height: 8}} />
 
         {/* Password */}
-        <CMEntry hint="Password" />
+        <CMEntry hint="Password" isPassword={true} />
 
         {/* Confirm button */}
         <TouchableOpacity
