@@ -11,9 +11,16 @@ import {
 
 export default function JSONFeedScreen() {
   renderRow = ({item, index}) => (
-    <Text>
-      {index + 1}. {item}
-    </Text>
+    <TouchableOpacity style={styles.listCard}>
+      {/* Avatar and title, subtitle */}
+      <View style={styles.listCardView}>
+        {/* Avatar */}
+        <Image
+          style={styles.listAvatar}
+          source={require('./assets/img/avatar.png')}
+        />
+      </View>
+    </TouchableOpacity>
   );
 
   return (
