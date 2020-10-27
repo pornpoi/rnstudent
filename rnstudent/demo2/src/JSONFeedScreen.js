@@ -36,10 +36,7 @@ export default function JSONFeedScreen() {
       {/* Avatar and title, subtitle */}
       <View style={styles.listCardView}>
         {/* Avatar */}
-        <Image
-          style={styles.listAvatar}
-          source={require('./assets/img/avatar.png')}
-        />
+        <Image style={styles.listAvatar} source={{uri: item.avatar_image}} />
 
         {/* Title and Subtitle */}
         <View style={styles.listTitleSubtitleContainer}>
@@ -51,7 +48,7 @@ export default function JSONFeedScreen() {
       {/* Youtube Image */}
       <Image
         style={styles.listYoutbeImage}
-        source={require('./assets/img/loadingimg.png')}
+        source={{uri: item.youtube_image}}
       />
     </TouchableOpacity>
   );
