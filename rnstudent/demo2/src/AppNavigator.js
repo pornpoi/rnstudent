@@ -1,6 +1,6 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
-
+import React, {Component} from 'react';
+import {Image, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -9,8 +9,40 @@ import RegisterScreen from './RegisterScreen';
 import JSONFeedScreen from './JSONFeedScreen';
 import CameraScreen from './CameraScreen';
 import YoutubeScreen from './YoutubeScreen';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const Stack = createStackNavigator();
+
+const successOption = (props) => {
+  return {
+    title: 'Success',
+    headerStyle: {
+      backgroundColor: '#999CED',
+    },
+    headerTintColor: '#FFFFFF',
+    headerTitleStyle: {color: '#fff'},
+    headerBackTitle: ' ',
+    headerRight: () => (
+      <TouchableOpacity
+        activeOpacity={0.1}
+        onPress={async () => {
+          // await AsyncStorage.removeItem('token');
+          // props.setIsReady(false);
+        }}
+        style={{padding: 10}}>
+        <Icon
+          name="sign-out"
+          size={20}
+          color="#fff"
+          style={{
+            height: 24,
+            width: 24,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+  };
+};
 
 const RootStack = (props) => {
   return (
@@ -27,7 +59,11 @@ const RootStack = (props) => {
           options={{title: 'Register'}}
         />
 
-        <Stack.Screen name="Success" component={SuccessTab} />
+        <Stack.Screen
+          name="Success"
+          component={SuccessTab}
+          options={successOption(props)}
+        />
       </>
     </Stack.Navigator>
   );
