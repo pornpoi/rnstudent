@@ -12,6 +12,13 @@ import {
 import axios from 'axios';
 
 export default function JSONFeedScreen() {
+
+  const [dataArray, setDataArray] = useState([])
+  const [isRefreshing, setIsRefreshing] = React.useState(false);
+
+
+
+
   React.useEffect(() => {
     loadDataWithPost();
   }, []);
