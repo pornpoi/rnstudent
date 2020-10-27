@@ -26,6 +26,8 @@ const RootStack = (props) => {
           component={RegisterScreen}
           options={{title: 'Register'}}
         />
+
+        <Stack.Screen name="Success" component={SuccessTab} />
       </>
     </Stack.Navigator>
   );
