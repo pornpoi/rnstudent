@@ -68,7 +68,7 @@ export default function HomeScreen() {
         <CMEntry
           hint="Username"
           keyboardMode="email-address"
-          onChange={(text) => console.log(text)}
+          onChange={(text) => setUsername(text)}
         />
         <View style={{height: 8}} />
 
@@ -76,7 +76,7 @@ export default function HomeScreen() {
         <CMEntry
           hint="Password"
           isPassword
-          onChange={(text) => console.log(text)}
+          onChange={(text) => setPassword(text)}
         />
 
         {/* Confirm button */}
