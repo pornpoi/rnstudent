@@ -11,8 +11,10 @@ import {
 
 import axios from 'axios';
 
-
 export default function JSONFeedScreen() {
+  React.useEffect(() => {
+    loadDataWithPost();
+  }, []);
 
   const loadDataWithPost = async () => {
     let regUsername = 'admin'; // await AsyncStorage.getItem('username')
@@ -21,10 +23,10 @@ export default function JSONFeedScreen() {
     let data = `username=${regUsername}&password=${regPassword}&type=foods`;
 
     const url = 'http://codemobiles.com/adhoc/youtubes/index_new.php';
-    let result = await axios.post(url, data);     
+    let result = await axios.post(url, data);
+    console.log(JSON.stringify(result.data));
   };
 
-  
   renderRow = ({item, index}) => (
     <TouchableOpacity style={styles.listCard}>
       {/* Avatar and title, subtitle */}
