@@ -14,11 +14,11 @@ const Stack = createStackNavigator();
 
 const RootStack = (props) => {
   return (
-    <Stack.Navigator initialRouteName="Register">
-      <>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-      </>
+    <Stack.Navigator initialRouteName="Home">
+     <>
+      <Stack.Screen name="Home" component={HomeScreen}/>
+      <Stack.Screen name="Register" component={RegisterScreen}/>
+     </>
     </Stack.Navigator>
   );
 };
