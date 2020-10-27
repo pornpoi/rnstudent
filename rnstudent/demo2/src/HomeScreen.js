@@ -8,8 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-
-CMEntry = (props) => {
+CMEntry = ({hint}) => {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       {/* Icon */}
@@ -31,7 +30,9 @@ CMEntry = (props) => {
           borderColor: '#0007',
           borderRadius: 5,
         }}
-        placeholder={props.hint}
+        keyboardType={keyboardMode}
+        secureTextEntry={isPassword}
+        placeholder={hint}
       />
     </View>
   );
