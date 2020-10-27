@@ -15,10 +15,18 @@ const Stack = createStackNavigator();
 const RootStack = (props) => {
   return (
     <Stack.Navigator initialRouteName="Home">
-     <>
-      <Stack.Screen name="Home" component={HomeScreen}/>
-      <Stack.Screen name="Register" component={RegisterScreen}/>
-     </>
+      <>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'Login'}}
+        />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{title: 'Register'}}
+        />
+      </>
     </Stack.Navigator>
   );
 };
