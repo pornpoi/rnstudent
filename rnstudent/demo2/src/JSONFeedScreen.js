@@ -35,7 +35,7 @@ export default function JSONFeedScreen(props) {
     <TouchableOpacity
       style={styles.listCard}
       onPress={() => {
-        props.navigation.navigate('Youtube', {lek:item});
+        props.navigation.navigate('Youtube', {item});
       }}>
       {/* Avatar and title, subtitle */}
       <View style={styles.listCardView}>

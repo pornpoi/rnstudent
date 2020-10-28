@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, PixelRatio, ScrollView} from 'react-native';
 const YoutubeScreen = ({navigation, route}) => {
   const setNavigationOption = () => {
     navigation.setOptions({
-      title: route.params.lek.title,
+      title: route.params.item.title,
       headerStyle: {
         backgroundColor: '#339CED',
       },
@@ -20,7 +20,7 @@ const YoutubeScreen = ({navigation, route}) => {
 
   return (
     <View style={{flex: 1}}>
-      <Text>{route.params.lek.title}</Text>
+      <Text>{route.params.item.title}</Text>
     </View>
   );
 };
