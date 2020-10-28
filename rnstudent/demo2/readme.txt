@@ -31,4 +31,5 @@ yarn add axios
 
 https://cocoapods.org/
 
-
+node server.js
+npx nodemon server.js
