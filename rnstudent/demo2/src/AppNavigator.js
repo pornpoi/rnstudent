@@ -47,24 +47,31 @@ const successOption = (props) => {
 const RootStack = (props) => {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{title: 'Login'}}
-        />
-        <Stack.Screen
-          name="Register"
-          component={RegisterScreen}
-          options={{title: 'Register'}}
-        />
-
+      {props.showAuthen ? (
+        <>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{title: 'Login'}}
+          />
+          <Stack.Screen
+            name="Register"
+            component={RegisterScreen}
+            options={{title: 'Register'}}
+          />
+          <Stack.Screen
+            name="Success"
+            component={SuccessTab}
+            options={successOption(props)}
+          />
+        </>
+      ) : (
         <Stack.Screen
           name="Success"
           component={SuccessTab}
           options={successOption(props)}
         />
-      </>
+      )}
     </Stack.Navigator>
   );
 };
