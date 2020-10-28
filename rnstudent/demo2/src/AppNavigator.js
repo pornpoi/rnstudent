@@ -105,6 +105,19 @@ const tab2 = {
     />
   ),
 };
+
+// start
+const JSONStackScreen = ()=>{
+  return (
+    <Stack.Navigator initialRouteName="JSON">
+      <Stack.Screen component={JSONFeedScreen} name="JSON"/>
+      <Stack.Screen component={YoutubeScreen} name="Youtube"/>
+    </Stack.Navigator>
+  )
+}
+//end
+
+
 const SuccessTab = () => {
   return (
     <Tab.Navigator initialRouteName="JSON">
