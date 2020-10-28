@@ -57,3 +57,6 @@ $ yarn add react-native-permissions
   pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
 
 3. Remove DerivedData Folder  ~/Library/Developer/Xcode/DerivedData/
+
+
+https://medium.com/@rossbulat/react-native-lists-load-more-by-scrolling-378a1c5f56a6
