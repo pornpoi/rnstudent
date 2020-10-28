@@ -11,6 +11,7 @@ import AppNavigator from './src/AppNavigator';
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [isReady, setIsReady] = useState(false);
+
   useEffect(() => {
     AsyncStorage.getItem('token').then((token) => {
       setShowLogin(token == null ? true : false);
@@ -23,7 +24,7 @@ export default function App() {
       <View style={{flex: 1}}>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView />
-        <AppNavigator showAuthen={showLogin} />
+        <AppNavigator showAuthen={showLogin} setIsReady={setIsReady} />
       </View>
     </NavigationContainer>
   );

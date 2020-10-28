@@ -26,8 +26,8 @@ const successOption = (props) => {
       <TouchableOpacity
         activeOpacity={0.1}
         onPress={async () => {
-          // await AsyncStorage.removeItem('token');
-          // props.setIsReady(false);
+          await AsyncStorage.removeItem('token');
+          props.setIsReady(false);
         }}
         style={{padding: 10}}>
         <Icon
