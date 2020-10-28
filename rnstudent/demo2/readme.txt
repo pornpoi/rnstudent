@@ -30,3 +30,9 @@ npx react-native link react-native-permissions
 yarn add axios
 
 https://cocoapods.org/
+
+
+yarn add react-native-youtube react-native-image-crop-picker 
+npx react-native link react-native-youtube
+npx react-native link react-native-image-crop-picker 
+npx react-native run-android
