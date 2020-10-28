@@ -71,6 +71,7 @@ export default function HomeScreen(props) {
     });
   };
 
+  /*
   onClickLogin = async () => {
     const regUsername = await AsyncStorage.getItem('kUsername');
     const regPassword = await AsyncStorage.getItem('kPassword');
@@ -81,6 +82,22 @@ export default function HomeScreen(props) {
       alert('Failed : ' + `${regUsername}, ${regPassword}`);
     }
     props.navigation.navigate('Success');
+  };*/
+
+
+
+  onClickLogin = async () => {
+    const _username = await AsyncStorage.getItem('kUsername');
+    const _password = await AsyncStorage.getItem('kPassword');
+
+    if (username == _username && password == _password) {
+      await AsyncStorage.setItem('token', 'xxxx');
+      // props.navigation.navigate('Success');
+      props.navigation.dispatch(StackActions.replace('Success'));
+    } else {
+      await AsyncStorage.removeItem('token');
+      alert(`Login failed ${_username}, ${_password}`);
+    }     
   };
 
   return (
