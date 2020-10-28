@@ -32,7 +32,11 @@ export default function JSONFeedScreen() {
   };
 
   renderRow = ({item, index}) => (
-    <TouchableOpacity style={styles.listCard}>
+    <TouchableOpacity
+      style={styles.listCard}
+      onPress={() => {
+        props.navigation.navigate('Youtube', {item});
+      }}>
       {/* Avatar and title, subtitle */}
       <View style={styles.listCardView}>
         {/* Avatar */}
@@ -61,7 +65,6 @@ export default function JSONFeedScreen() {
     />
   );
 
-
   const refresh = () => {
     setIsRefreshing(true);
     setDataArray([]);
@@ -71,7 +74,7 @@ export default function JSONFeedScreen() {
       setIsRefreshing(false);
     }, 1000);
   };
-  
+
   return (
     <ImageBackground
       style={styles.container}
