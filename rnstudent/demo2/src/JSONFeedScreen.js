@@ -11,7 +11,7 @@ import {
 
 import axios from 'axios';
 
-export default function JSONFeedScreen() {
+export default function JSONFeedScreen(props) {
   const [dataArray, setDataArray] = useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
 
