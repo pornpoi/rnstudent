@@ -21,11 +21,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <View style={{flex: 1}}>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView />
-        <AppNavigator showAuthen={showLogin} setIsReady={setIsReady} />
-      </View>
+      {isReady ? (
+        <View style={{flex: 1}}>
+          <StatusBar barStyle="dark-content" />
+          <SafeAreaView />
+          <AppNavigator showAuthen={showLogin} setIsReady={setIsReady} />
+        </View>
+      ) : null}
     </NavigationContainer>
   );
 }
