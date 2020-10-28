@@ -84,22 +84,21 @@ const CameraScreen = () => {
       <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
         {/* CAMERA */}
         <TouchableOpacity
-          // onPress={() => openCamera(false)}
+          onPress={() => openCamera(false)}
           style={styles.button}>
           <Text style={styles.text}>CAMERA</Text>
         </TouchableOpacity>
 
         {/* CAMERA  + CROP*/}
         <TouchableOpacity
-          // onPress={() => openCamera(true)}
+          onPress={() => openCamera(true)}
           style={styles.button}>
           <Text style={styles.text}>CAMERA+CROP</Text>
         </TouchableOpacity>
 
         {/* GALLERY*/}
         <TouchableOpacity
-          // onPress={() => openPhotoGallery(true)}
-          onPress={() => setImage('hey')}
+          onPress={() => openPhotoGallery(true)}          
           style={styles.button}>
           <Text style={styles.text}>GALLERY</Text>
         </TouchableOpacity>
