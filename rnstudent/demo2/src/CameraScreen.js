@@ -17,6 +17,10 @@ import axios from 'axios';
 const CameraScreen = () => {
   const [image, setImage] = useState(null);
 
+  uploadWithAxios = (image) => {
+    alert('Hey');
+  };
+  
   return (
     <ImageBackground
       source={require('./assets/img/bg.png')}
