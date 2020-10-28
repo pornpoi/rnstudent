@@ -46,4 +46,15 @@ const tab2_Option = {
 };
 
 
+const RootStack = ()=> {
+  return (
+    <Stack.Navigator>
+      <>
+        <Stack.Screen name="TabScreen"/>
+        <Stack.Screen name="Scanner"/>
+      </>
+    </Stack.Navigator>
+  )
+}
+
 export default RootStack;
