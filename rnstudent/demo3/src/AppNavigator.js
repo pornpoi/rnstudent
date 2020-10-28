@@ -45,13 +45,24 @@ const tab2_Option = {
   ),
 };
 
+const TabScreen = ()=>{
+  return (
+    <Tab.Navigator initialRouteName="Tab1">
+      <>
+      <Tab.Screen name="Tab1" component={TabQRcode}/>
+      <Tab.Screen name="Tab2" component={TabScanner}/>
+      </>
+    </Tab.Navigator>
+  )
+}
+
 
 const RootStack = ()=> {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="TabScreen">
       <>
-        <Stack.Screen name="TabScreen"/>
-        <Stack.Screen name="Scanner"/>
+        <Stack.Screen name="TabScreen" component={TabScreen}/>
+        <Stack.Screen name="Scanner" component={ScannerScreen}/>
       </>
     </Stack.Navigator>
   )
