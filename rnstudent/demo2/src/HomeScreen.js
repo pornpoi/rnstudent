@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import {StackActions} from '@react-navigation/native';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 CMEntry = ({hint, isPassword, keyboardMode, onChange, icon}) => {
@@ -84,8 +86,6 @@ export default function HomeScreen(props) {
     props.navigation.navigate('Success');
   };*/
 
-
-
   onClickLogin = async () => {
     const _username = await AsyncStorage.getItem('kUsername');
     const _password = await AsyncStorage.getItem('kPassword');
@@ -97,7 +97,7 @@ export default function HomeScreen(props) {
     } else {
       await AsyncStorage.removeItem('token');
       alert(`Login failed ${_username}, ${_password}`);
-    }     
+    }
   };
 
   return (
