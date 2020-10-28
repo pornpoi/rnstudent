@@ -51,15 +51,18 @@ const CameraScreen = () => {
         {/* GALLERY*/}
         <TouchableOpacity
           // onPress={() => openPhotoGallery(true)}
+          onPress={() => setImage('hey')}
           style={styles.button}>
           <Text style={styles.text}>GALLERY</Text>
         </TouchableOpacity>
       </View>
 
-      {image && <Image
-        style={{flex: 1, width: '100%', marginBottom: 20}}
-        source={require('./assets/img/loadingimg.png')}
-      />}
+      {image && (
+        <Image
+          style={{flex: 1, width: '100%', marginBottom: 20}}
+          source={require('./assets/img/loadingimg.png')}
+        />
+      )}
     </ImageBackground>
   );
 };
