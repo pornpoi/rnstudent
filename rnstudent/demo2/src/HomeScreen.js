@@ -7,6 +7,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 
 import {StackActions} from '@react-navigation/native';
@@ -25,6 +26,7 @@ CMEntry = ({hint, isPassword, keyboardMode, onChange, icon}) => {
           flex: 1,
           paddingLeft: 16,
           borderWidth: 1,
+          height: Platform.OS == 'android' ? 40 : 50,
           borderColor: '#0007',
           borderRadius: 5,
         }}
