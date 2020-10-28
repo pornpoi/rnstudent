@@ -28,3 +28,5 @@ npx react-native link @react-native-community/async-storage
 npx react-native link react-native-permissions
 
 yarn add axios
+
+https://cocoapods.org/
