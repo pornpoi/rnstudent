@@ -60,8 +60,17 @@ const CameraScreen = () => {
       {image && (
         <Image
           style={{flex: 1, width: '100%', marginBottom: 20}}
-          source={require('./assets/img/loadingimg.png')}
+          source={image}
         />
+      )}
+
+      {/* Show Upload button */}
+      {image && (
+        <TouchableOpacity
+          onPress={() => uploadWithAxios(image)}
+          style={styles.upload_button}>
+          <Text style={styles.text}>UPLOAD</Text>
+        </TouchableOpacity>
       )}
     </ImageBackground>
   );
