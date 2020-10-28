@@ -39,3 +39,21 @@ yarn add express formidable fs-extra body-parser
 
 
 https://www.youtube.com/watch?v=iRyrJ3VaN0U&t=683s
+
+
+#Fix No Permission Handler Detect
+1. https://github.com/react-native-community/react-native-permissions#ios
+$ npm install --save react-native-permissions
+# --- or ---
+$ yarn add react-native-permissions
+
+
+2. Add this code into Podfile
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts.podspec"
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone.podspec"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications.podspec"
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary.podspec"
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
+
+3. Remove DerivedData Folder  ~/Library/Developer/Xcode/DerivedData/
