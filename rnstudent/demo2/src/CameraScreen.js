@@ -17,9 +17,53 @@ import axios from 'axios';
 const CameraScreen = () => {
   const [image, setImage] = useState(null);
 
-  uploadWithAxios = (image) => {
-    alert('Hey');
+ 
+  const openCamera = async (cropIt) => {
+    let image = await ImagePicker.openCamera({
+      cropping: cropIt,
+      width: 500, // width after cropped
+      height: 500, // height after cropped
+      includeExif: true,
+    });
+
+    setImage({uri: image.path, width: image.width, height: image.height});
   };
+
+  const openPhotoGallery = async (cropIt) => {
+    let image = await ImagePicker.openPicker({
+      // width: 300, // width after cropped
+      // height: 300, // height after cropped
+      cropping: cropIt,
+      compressImageMaxWidth: 640, // max width compress if not croppred
+      compressImageMaxHeight: 480, // max height compress if not croppred
+      compressImageQuality: 0.5,
+      compressVideoPreset: 'MediumQuality',
+      includeExif: true,
+    });
+
+    setImage({
+      uri: image.path,
+      width: image.width,
+      height: image.height,
+      mime: image.mime,
+    });
+  };
+
+  const uploadWithAxios = async () => {
+    const data = new FormData();
+    data.append('username', 'codemobiles'); // you can append anyone.
+    data.append('password', '1234'); // you can append anyone.
+    data.append('userfile', {
+      uri: image.uri,
+      type: 'image/jpeg', // or photo.type
+      name: 'testPhotoName.jpg',
+    });
+
+    let result = await axios.post('http://192.168.0.108:3000/uploads', data);
+    console.log(JSON.stringify(result.data));
+    Alert.alert(JSON.stringify(result.data));
+  };
+
   
   return (
     <ImageBackground
