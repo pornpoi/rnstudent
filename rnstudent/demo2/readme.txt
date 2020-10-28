@@ -33,3 +33,6 @@ https://cocoapods.org/
 
 node server.js
 npx nodemon server.js
+
+
+yarn add express formidable fs-extra body-parser
