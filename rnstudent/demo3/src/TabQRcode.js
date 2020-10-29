@@ -53,31 +53,36 @@ export default function TabQRcode() {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-         {[1,2,3].map(value=><MyQRCode value={value.toString()} />)} 
+        {[1, 2, 3].map((value) => (
+          <MyQRCode
+            value={value.toString()}
+            logo={require(PATH_TO_LOGO)}
+            logoBorderRadius={15}
+          />
+        ))}
       </ScrollView>
     </ImageBackground>
   );
 }
 
-
 class MyQRCode extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
-
+    this.state = {};
   }
 
   render() {
-    const {value} = this.props
+    const {value} = this.props;
     return (
       <View style={{margin: 8}}>
-      <QRCode {...this.props} value={value != '' ? value : 'www.codemobiles.com'} />
-    </View>
+        <QRCode
+          {...this.props}
+          value={value != '' ? value : 'www.codemobiles.com'}
+        />
+      </View>
     );
   }
 }
-
 
 class CMQRCodeClass extends Component {
   constructor(props) {
