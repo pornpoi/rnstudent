@@ -11,6 +11,7 @@ import {
 
 import {useSelector, useDispatch} from 'react-redux';
 import * as appActions from './actions/app.action';
+import * as jsonActions from './actions/jsonfeedscreen.action';
 import {YouTubeStandaloneAndroid} from 'react-native-youtube';
 import axios from 'axios';
 
@@ -19,6 +20,10 @@ export default function JSONFeedScreen(props) {
   const [isRefreshing, setIsRefreshing] = React.useState(false);
 
   const appReducer = useSelector((state) => state.appReducer);
+  const jsonfeedscreenReducer = useSelector(
+    (state) => state.jsonfeedscreenReducer,
+  );
+  
   const dispatch = useDispatch();
 
   React.useEffect(() => {
