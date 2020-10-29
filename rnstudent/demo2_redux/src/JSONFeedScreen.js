@@ -16,33 +16,16 @@ import {YouTubeStandaloneAndroid} from 'react-native-youtube';
 import axios from 'axios';
 
 export default function JSONFeedScreen(props) {
-  const [dataArray, setDataArray] = useState([]);
-  const [isRefreshing, setIsRefreshing] = React.useState(false);
-
   const appReducer = useSelector((state) => state.appReducer);
   const jsonfeedscreenReducer = useSelector(
     (state) => state.jsonfeedscreenReducer,
   );
-
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    // loadDataWithPost();
     dispatch(jsonActions.loadDataWithPost());
     dispatch(appActions.checkIn('lek'));
   }, []);
-
-  const loadDataWithPost = async () => {
-    let regUsername = 'admin'; // await AsyncStorage.getItem('username')
-    let regPassword = 'password'; // await AsyncStorage.getItem('password')
-    // urlencoded
-    let data = `username=${regUsername}&password=${regPassword}&type=foods`;
-
-    const url = 'http://codemobiles.com/adhoc/youtubes/index_new.php';
-    let result = await axios.post(url, data);
-    console.log(JSON.stringify(result.data));
-    setDataArray(result.data.youtubes);
-  };
 
   renderRow = ({item, index}) => (
     <TouchableOpacity
@@ -87,14 +70,8 @@ export default function JSONFeedScreen(props) {
   );
 
   const refresh = () => {
-    setIsRefreshing(true);
-    setDataArray([]);
-    dispatch(appActions.setStateCheckOut());
-    setTimeout(async () => {
-      dispatch(jsonActions.loadDataWithPost());
-      setIsRefreshing(false);
-      dispatch(appActions.checkIn('kan'));
-    }, 1000);
+    dispatch(appActions.checkIn('kan'));
+    dispatch(jsonActions.loadDataWithPost());
   };
 
   const {username, timestamp} = appReducer;
@@ -108,7 +85,7 @@ export default function JSONFeedScreen(props) {
         </Text>
       )}
       <FlatList
-        refreshing={isRefreshing}
+        refreshing={jsonfeedscreenReducer.isFetching}
         onRefresh={refresh}
         ListHeaderComponent={renderHeader}
         data={jsonfeedscreenReducer.dataArray}
