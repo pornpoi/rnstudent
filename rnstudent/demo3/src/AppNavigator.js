@@ -61,7 +61,7 @@ const RootStack = ()=> {
   return (
     <Stack.Navigator initialRouteName="TabScreen">
       <>
-        <Stack.Screen name="TabScreen" component={TabScreen}/>
+        <Stack.Screen name="TabScreen" component={TabScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Scanner" component={ScannerScreen}/>
       </>
     </Stack.Navigator>
