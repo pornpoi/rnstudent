@@ -49,8 +49,8 @@ const TabScreen = ()=>{
   return (
     <Tab.Navigator initialRouteName="Tab1">
       <>
-      <Tab.Screen name="Tab1" component={TabQRcode}/>
-      <Tab.Screen name="Tab2" component={TabScanner}/>
+      <Tab.Screen name="Tab1" component={TabQRcode} options={tab1_Option}/>
+      <Tab.Screen name="Tab2" component={TabScanner} options={tab2_Option}/>
       </>
     </Tab.Navigator>
   )
