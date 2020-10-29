@@ -23,11 +23,12 @@ export default function JSONFeedScreen(props) {
   const jsonfeedscreenReducer = useSelector(
     (state) => state.jsonfeedscreenReducer,
   );
-  
+
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    loadDataWithPost();
+    // loadDataWithPost();
+    dispatch(jsonActions.loadDataWithPost());
     dispatch(appActions.checkIn('lek'));
   }, []);
 
@@ -110,7 +111,7 @@ export default function JSONFeedScreen(props) {
         refreshing={isRefreshing}
         onRefresh={refresh}
         ListHeaderComponent={renderHeader}
-        data={dataArray ? dataArray : []}
+        data={jsonfeedscreenReducer.dataArray}
         renderItem={renderRow}
         keyExtractor={(item) => item.id}
       />
