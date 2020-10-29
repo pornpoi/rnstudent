@@ -1,10 +1,12 @@
-export const setCheckIn = (payload) => ({
-  type: type,
-  payload,
-});
+import { APP_CHECKIN, APP_CHECKOUT } from "../constants";
 
-checkIn = (username) => {
-  return (dispatch) => {
-    dispatch(setCheckIn(username));
-  };
-};
+export const setStateCheckIn = (payload) => ({
+    type: APP_CHECKIN,
+    payload
+})
+
+
+export const setStateCheckOut = () => ({
+    type: APP_CHECKOUT,
+})
+
