@@ -6,7 +6,6 @@ import {
 
 import axios from 'axios';
 
-
 // Used by Reducers
 export const setStateToFetching = () => ({
   type: JSON_FEED_FETCHING,
@@ -21,8 +20,8 @@ export const setStateToFailed = () => ({
   type: JSON_FEED_FAILED,
 });
 
-
-export const loadDataWithPost = async () => {
+export const loadDataWithPost = () => {
+  return async (dispatch) => {
     let regUsername = 'admin'; // await AsyncStorage.getItem('username')
     let regPassword = 'password'; // await AsyncStorage.getItem('password')
     // urlencoded
@@ -30,5 +29,6 @@ export const loadDataWithPost = async () => {
 
     const url = 'http://codemobiles.com/adhoc/youtubes/index_new.php';
     let result = await axios.post(url, data);
-        
+    dispatch(setStateToSuccess(result.data.youtubes));
   };
+};
