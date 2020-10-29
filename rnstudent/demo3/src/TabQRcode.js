@@ -53,7 +53,7 @@ export default function TabQRcode() {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-         <CMQRCode value="http://awesome.link.qr" />
+         {[1,2,3].map(value=><CMQRCode value={value.toString()} />)} 
       </ScrollView>
     </ImageBackground>
   );
