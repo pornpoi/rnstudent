@@ -91,7 +91,7 @@ export default function JSONFeedScreen(props) {
     setDataArray([]);
     dispatch(appActions.setStateCheckOut());
     setTimeout(async () => {
-      await loadDataWithPost();
+      dispatch(jsonActions.loadDataWithPost());
       setIsRefreshing(false);
       dispatch(appActions.checkIn('kan'));
     }, 1000);
