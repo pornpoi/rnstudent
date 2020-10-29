@@ -21,8 +21,6 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 
 // AppRegistry.registerComponent(appName, () => App);
 
-
-
 const store = createStore(
     reducers,
     composeWithDevTools(applyMiddleware(logger, thunk)),
