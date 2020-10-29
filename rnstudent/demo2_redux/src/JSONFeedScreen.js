@@ -13,7 +13,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import * as appActions from './actions/app.action';
 import * as jsonActions from './actions/jsonfeedscreen.action';
 import {YouTubeStandaloneAndroid} from 'react-native-youtube';
-import axios from 'axios';
 
 export default function JSONFeedScreen(props) {
   const appReducer = useSelector((state) => state.appReducer);
