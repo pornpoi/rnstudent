@@ -7,6 +7,12 @@ export default function ScannerScreen(props) {
   const [isReady, setIsReady] = useState(false);
   const scannerRef = useRef(null)
 
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsReady(true)
+    }, 2000)
+  })
+
   const showScanner = () => {
     return (
       <QRCodeScanner
@@ -47,7 +53,7 @@ export default function ScannerScreen(props) {
 
   return (
     <View style={{flex: 1, backgroundColor: 'black'}}>
-      {true ? showScanner() : showLoading()}
+      {isReady ? showScanner() : showLoading()}
     </View>
   );
 }
