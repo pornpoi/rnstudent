@@ -83,10 +83,11 @@ export default function JSONFeedScreen(props) {
   const refresh = () => {
     setIsRefreshing(true);
     setDataArray([]);
-
+    dispatch(appActions.setStateCheckOut());
     setTimeout(async () => {
       await loadDataWithPost();
       setIsRefreshing(false);
+      dispatch(appActions.checkIn('kan'));
     }, 1000);
   };
 
