@@ -48,12 +48,12 @@ export default function TabQRcode() {
         onChangeText={(text) => setQrValue(text)}
       />
 
-      <ScrollView      
+      <ScrollView
         contentContainerStyle={{
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-       
+        <QRCode value="http://awesome.link.qr" />
       </ScrollView>
     </ImageBackground>
   );
