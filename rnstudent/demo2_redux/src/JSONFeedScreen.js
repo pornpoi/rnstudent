@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import {useSelector, useDispatch} from 'react-redux';
+import * as appActions from './actions/app.action';
 import {YouTubeStandaloneAndroid} from 'react-native-youtube';
 import axios from 'axios';
 
@@ -16,8 +18,13 @@ export default function JSONFeedScreen(props) {
   const [dataArray, setDataArray] = useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
 
+  
+  const appReducer = useSelector((state) => state.appReducer);
+  const dispatch = useDispatch();
+
   React.useEffect(() => {
     loadDataWithPost();
+    dispatch(appActions.checkIn('lek'));
   }, []);
 
   const loadDataWithPost = async () => {
@@ -88,6 +95,7 @@ export default function JSONFeedScreen(props) {
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
+      {appReducer.username && <Text>{appReducer.username}</Text>}
       <FlatList
         refreshing={isRefreshing}
         onRefresh={refresh}

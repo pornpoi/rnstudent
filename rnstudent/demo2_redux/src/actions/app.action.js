@@ -15,7 +15,7 @@ export const checkIn = (username) => {
   return (dispatch) => {
     // do something....
     setTimeout(() => {
-        dispatch(setStateCheckIn(username))      
-    }, 1000);
+      dispatch(setStateCheckIn(username));
+    }, 5000);
   };
 };
