@@ -22,13 +22,20 @@ export const setStateToFailed = () => ({
 
 export const loadDataWithPost = () => {
   return async (dispatch) => {
-    let regUsername = 'admin'; // await AsyncStorage.getItem('username')
-    let regPassword = 'password'; // await AsyncStorage.getItem('password')
-    // urlencoded
-    let data = `username=${regUsername}&password=${regPassword}&type=foods`;
+    try {
+      // set fetching to allow progress bar to appear
+      dispatch(setStateToFetching());
 
-    const url = 'http://codemobiles.com/adhoc/youtubes/index_new.php';
-    let result = await axios.post(url, data);
-    dispatch(setStateToSuccess(result.data.youtubes));
+      let regUsername = 'admin'; // await AsyncStorage.getItem('username')
+      let regPassword = 'password'; // await AsyncStorage.getItem('password')
+      // urlencoded
+      let data = `username=${regUsername}&password=${regPassword}&type=foods`;
+
+      const url = 'http://codemobiles.com/adhoc/youtubes/index_new.php';
+      let result = await axios.post(url, data);
+      dispatch(setStateToSuccess(result.data.youtubes));
+    } catch (error) {
+      dispatch(setStateToFailed());
+    }
   };
 };
