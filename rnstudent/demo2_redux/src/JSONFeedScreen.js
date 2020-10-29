@@ -18,7 +18,6 @@ export default function JSONFeedScreen(props) {
   const [dataArray, setDataArray] = useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
 
-  
   const appReducer = useSelector((state) => state.appReducer);
   const dispatch = useDispatch();
 
@@ -91,11 +90,16 @@ export default function JSONFeedScreen(props) {
     }, 1000);
   };
 
+  const {username, timestamp} = appReducer;
   return (
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
-      {appReducer.username && <Text>{appReducer.username}</Text>}
+      {appReducer.username && (
+        <Text>
+          {username} : {timestamp}
+        </Text>
+      )}
       <FlatList
         refreshing={isRefreshing}
         onRefresh={refresh}
