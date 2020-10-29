@@ -53,7 +53,7 @@ export default function TabQRcode() {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-         {[1,2,3].map(value=><CMQRCode value={value.toString()} />)} 
+         {[1,2,3].map(value=><CMQRCodeClass value={value.toString()} />)} 
       </ScrollView>
     </ImageBackground>
   );
