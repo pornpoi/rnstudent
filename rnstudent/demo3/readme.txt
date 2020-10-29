@@ -62,3 +62,5 @@ $ yarn add react-native-permissions
   <key>NSMicrophoneUsageDescription</key>
   <string>Your message to user when the microphone is accessed for the first time</string>
   
+
+  https://www.youtube.com/watch?v=aAXwCs5MGfg
