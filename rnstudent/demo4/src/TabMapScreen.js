@@ -31,12 +31,28 @@ const TabMapScreen = () => {
   });
 
 
+  useEffect(() => {
+    loadMarkers();
+  }, []);
+
+  async function loadMarkers() {
+    let result = await queryLocations()
+
+    let tmp = [];
+    result.data.forEach(item => {
+      tmp = [...tmp, {coordinate: item, key: tmp.length.toString()}];
+    });
+
+    setMarkers(tmp);
+  }
+
+
   const addMarker = async coordinate => {
     setMarkers([...markers, 
       {coordinate, key: markers.length.toString()}]);
 
-    // let result = await submitLocation(coordinate)
-    // console.log(JSON.stringify(result));
+    let result = await submitLocation(coordinate)
+    console.log(JSON.stringify(result));
   };
  
   function onClickCallout({latitude, longitude}) {
