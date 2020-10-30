@@ -30,6 +30,14 @@ const TabMapScreen = () => {
     longitudeDelta: LONGITUDE_DELTA,
   });
 
+
+  const addMarker = async coordinate => {
+    setMarkers([...markers, 
+      {coordinate, key: markers.length.toString()}]);
+
+    // let result = await submitLocation(coordinate)
+    // console.log(JSON.stringify(result));
+  };
  
 
   return (
