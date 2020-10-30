@@ -38,8 +38,11 @@ const TabMapScreen = () => {
       initialRegion={region}
         onPress={e => addMarker(e.nativeEvent.coordinate)}
         style={styles.map}
-        mapType="satellite" // NORMAL, SATELLITE, HYBRID
-      />
+        mapType="standard" // NORMAL, SATELLITE, HYBRID
+      >
+         <Marker            
+            coordinate={region}/>
+        </MapView>
     </View>
   );
 };
