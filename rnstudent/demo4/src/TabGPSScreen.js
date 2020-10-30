@@ -8,8 +8,7 @@ import {
   Platform,
   PermissionsAndroid,
 } from 'react-native';
-import {submitLocation} from './LocationTrackingAPI'
-
+import {submitLocation} from './LocationTrackingAPI';
 
 // https://github.com/react-community/react-native-maps/blob/master/docs/mapview.md
 import MapView, {Marker, AnimatedRegion} from 'react-native-maps';
@@ -61,9 +60,9 @@ const TabGPSScreen = () => {
         console.log(JSON.stringify(position));
         coordinate.timing(position.coords).start();
         setPosition(position.coords); // const {latitude, longitude} = position.coords;
-        await submitLocation(position.coords)
+        await submitLocation(position.coords);
       },
-      error => {
+      (error) => {
         alert(JSON.stringify(error));
       },
       {
@@ -127,8 +126,7 @@ const TabGPSScreen = () => {
           latitudeDelta: LATITUDE_DELTA,
           longitudeDelta: LONGITUDE_DELTA,
         }}>
-
-<Marker.Animated coordinate={coordinate}>
+        <Marker.Animated coordinate={coordinate}>
           <Image
             source={require('./assets/img/cmdev_icon.png')}
             style={{
@@ -153,7 +151,7 @@ const TabGPSScreen = () => {
       <SegmentedControlTab
         selectedIndex={selectedIndex}
         values={['Standard', 'Sattile', 'Hybrid']}
-        onTabPress={index => changeMapType(index)}
+        onTabPress={(index) => changeMapType(index)}
       />
 
       <Image
