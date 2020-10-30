@@ -128,7 +128,7 @@ const TabGPSScreen = () => {
           longitudeDelta: LONGITUDE_DELTA,
         }}>
 
-      
+      <Marker.Animated coordinate={coordinate}/>
       </MapView>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={[styles.bubble, styles.button]}>
