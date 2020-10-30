@@ -39,6 +39,9 @@ const TabMapScreen = () => {
     // console.log(JSON.stringify(result));
   };
  
+  function onClickCallout({latitude, longitude}) {
+    openMap({query: `${latitude}, ${longitude}`, provider: 'google'});
+  }
 
   return (
     <View style={styles.container}>
