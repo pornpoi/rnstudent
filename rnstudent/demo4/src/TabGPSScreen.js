@@ -128,7 +128,18 @@ const TabGPSScreen = () => {
           longitudeDelta: LONGITUDE_DELTA,
         }}>
 
-      <Marker.Animated coordinate={coordinate}/>
+<Marker.Animated coordinate={coordinate}>
+          <Image
+            source={require('./assets/img/cmdev_icon.png')}
+            style={{
+              height: 30,
+              width: 30,
+              borderColor: 'white',
+              borderRadius: 15,
+              borderWidth: 2,
+            }}
+          />
+        </Marker.Animated>
       </MapView>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={[styles.bubble, styles.button]}>
